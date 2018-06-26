@@ -5,11 +5,13 @@ int k;
 int A[100000];
 
 int p(int x){
-    int shigoto=0,nowwork=0,j,t;
+    int shigoto=0,nowwork=1,j;
     for (j=0;j<n; j++){
-        for(t=nowwork ; shigoto+A[nowwork]<x ; nowwork++){
-            shigoto=shigoto+A[nowwork];
-        }}
+        if(A[j]>x) return 0;
+        else if(shigoto+A[j]<=x) shigoto=shigoto+A[j];
+        else nowwork=nowwork+1;
+        shigoto=A[j];
+    }
     return nowwork<=k;
 }
 
@@ -29,7 +31,7 @@ int main(){
         else {
             lb=x;
         }}
-    printf("%d\n",lb);
+    printf("%d\n",ub);
     
     
     return 0;
