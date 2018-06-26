@@ -10,7 +10,7 @@ int p(int x){
     for(j = 0; j < n; j++){
         sum=sum+A[j]/x;
     }
-    return sum>k;
+    return sum>=k;
 }
 
 int main(){
