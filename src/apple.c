@@ -4,20 +4,10 @@ int n;
 int k;
 int A[100000];
 
-int max(int m){
-    int max=A[0];
-    for(int j=1; j≤n; j++){
-        if(A[0]<A[j]){
-            max=A[j];
-        }
-    }
-    return max;
-}
-
 int sum(int x){
-    int sum=0;
+    int sum=0,h;
     for(h=0; h<n; h++){
-        sum=sum+ceil(A[h]/x);
+        sum=sum+(A[h]-1)/x;
     }
     return sum;
 }
@@ -33,7 +23,7 @@ int main(){
     scanf("%d", &A[i]);
   }
     lb=0;
-    ub=max;
+    ub=1000000000;
     while(ub-lb>1){
         int x=(lb+ub)/2;
         if(p(x)){
