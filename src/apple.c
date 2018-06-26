@@ -4,15 +4,11 @@ int n;
 int k;
 int A[100000];
 
-int sum(int x){
-    int sum=0,h;
-    for(h=0; h<n; h++){
-        sum=sum+(A[h]-1)/x;
-    }
-    return sum;
-}
-
 int p(int x){
+    int sum=0,j;
+    for(j=0; j<n; j++){
+        sum =sum+(A[j]-1)/x+1 ;
+    }
     return(int)sum<=k;
 }
 
