@@ -9,8 +9,10 @@ int p(int x){
     for (j=0;j<n; j++){
         if(A[j]>x) return 0;
         else if(shigoto+A[j]<=x) shigoto=shigoto+A[j];
-        else nowwork=nowwork+1;
+        else {
+        nowwork=nowwork+1;
         shigoto=A[j];
+        }
     }
     return nowwork<=k;
 }
